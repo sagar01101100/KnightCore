@@ -1,0 +1,398 @@
+{
+  "segments": [
+    {
+      "id": "restaurants",
+      "name": "Restaurants",
+      "icon": "utensils",
+      "sortOrder": 0
+    },
+    {
+      "id": "salons",
+      "name": "Salons & spas",
+      "icon": "scissors",
+      "sortOrder": 1
+    },
+    {
+      "id": "property",
+      "name": "Property owners",
+      "icon": "building",
+      "sortOrder": 2
+    },
+    {
+      "id": "clinics",
+      "name": "Clinics",
+      "icon": "heart",
+      "sortOrder": 3
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching institutes",
+      "icon": "graduation",
+      "sortOrder": 4
+    },
+    {
+      "id": "manufacturing",
+      "name": "Manufacturers",
+      "icon": "factory",
+      "sortOrder": 5
+    }
+  ],
+  "packages": [
+    {
+      "id": "clinics",
+      "segmentId": "clinics",
+      "name": "Clinic Flow",
+      "summary": "Less paperwork between appointments. More time for your patients.",
+      "accent": "violet",
+      "versionId": "clinics-v1",
+      "version": 1,
+      "basePrice": "26000",
+      "included": [
+        "Appointment scheduling",
+        "Patient registration",
+        "Billing & receipts",
+        "Role-based staff access"
+      ],
+      "delivery": "2\u20133 weeks",
+      "features": [
+        {
+          "id": "clinics-branches-v1",
+          "code": "branches",
+          "name": "Additional locations",
+          "description": "Extend your workspace to another branch or location.",
+          "priceMode": "PerUnit",
+          "unitPrice": "3500",
+          "maxQuantity": 20,
+          "requires": []
+        },
+        {
+          "id": "clinics-inventory-v1",
+          "code": "inventory",
+          "name": "Medical inventory",
+          "description": "Track supplies, purchase records and stock levels.",
+          "priceMode": "Fixed",
+          "unitPrice": "6500",
+          "maxQuantity": 1,
+          "requires": []
+        },
+        {
+          "id": "clinics-reminders-v1",
+          "code": "reminders",
+          "name": "Patient reminders",
+          "description": "Send appointment notifications to patients.",
+          "priceMode": "Fixed",
+          "unitPrice": "3500",
+          "maxQuantity": 1,
+          "requires": []
+        },
+        {
+          "id": "clinics-reporting-v1",
+          "code": "reporting",
+          "name": "Operational reports",
+          "description": "Understand visits and clinic activity.",
+          "priceMode": "Fixed",
+          "unitPrice": "4500",
+          "maxQuantity": 1,
+          "requires": []
+        }
+      ]
+    },
+    {
+      "id": "coaching",
+      "segmentId": "coaching",
+      "name": "Learning Hub",
+      "summary": "Connect your batches, students and daily institute operations.",
+      "accent": "amber",
+      "versionId": "coaching-v1",
+      "version": 1,
+      "basePrice": "22000",
+      "included": [
+        "Student directory",
+        "Batch management",
+        "Attendance tracking",
+        "Fee records"
+      ],
+      "delivery": "2\u20133 weeks",
+      "features": [
+        {
+          "id": "coaching-branches-v1",
+          "code": "branches",
+          "name": "Additional locations",
+          "description": "Extend your workspace to another branch or location.",
+          "priceMode": "PerUnit",
+          "unitPrice": "3500",
+          "maxQuantity": 20,
+          "requires": []
+        },
+        {
+          "id": "coaching-integrations-v1",
+          "code": "integrations",
+          "name": "Payment integration",
+          "description": "Connect a supported payment provider.",
+          "priceMode": "Fixed",
+          "unitPrice": "6500",
+          "maxQuantity": 1,
+          "requires": []
+        },
+        {
+          "id": "coaching-parents-v1",
+          "code": "parents",
+          "name": "Parent portal",
+          "description": "Give parents a view of progress and attendance.",
+          "priceMode": "Fixed",
+          "unitPrice": "5000",
+          "maxQuantity": 1,
+          "requires": []
+        },
+        {
+          "id": "coaching-tests-v1",
+          "code": "tests",
+          "name": "Online assessments",
+          "description": "Create and manage objective tests.",
+          "priceMode": "Fixed",
+          "unitPrice": "7000",
+          "maxQuantity": 1,
+          "requires": []
+        }
+      ]
+    },
+    {
+      "id": "manufacturing",
+      "segmentId": "manufacturing",
+      "name": "Operations Core",
+      "summary": "A clear picture of your orders, products and shop-floor priorities.",
+      "accent": "slate",
+      "versionId": "manufacturing-v1",
+      "version": 1,
+      "basePrice": "35000",
+      "included": [
+        "Product catalog",
+        "Sales orders",
+        "Basic stock records",
+        "Operations dashboard"
+      ],
+      "delivery": "2\u20133 weeks",
+      "features": [
+        {
+          "id": "manufacturing-analytics-v1",
+          "code": "analytics",
+          "name": "Operational analytics",
+          "description": "Track lead times, stock and order performance.",
+          "priceMode": "Fixed",
+          "unitPrice": "6500",
+          "maxQuantity": 1,
+          "requires": []
+        },
+        {
+          "id": "manufacturing-branches-v1",
+          "code": "branches",
+          "name": "Additional locations",
+          "description": "Extend your workspace to another branch or location.",
+          "priceMode": "PerUnit",
+          "unitPrice": "3500",
+          "maxQuantity": 20,
+          "requires": []
+        },
+        {
+          "id": "manufacturing-procurement-v1",
+          "code": "procurement",
+          "name": "Procurement",
+          "description": "Manage purchase requests and supplier orders.",
+          "priceMode": "Fixed",
+          "unitPrice": "8500",
+          "maxQuantity": 1,
+          "requires": []
+        },
+        {
+          "id": "manufacturing-production-v1",
+          "code": "production",
+          "name": "Production planning",
+          "description": "Plan production runs and monitor progress.",
+          "priceMode": "Fixed",
+          "unitPrice": "12000",
+          "maxQuantity": 1,
+          "requires": []
+        }
+      ]
+    },
+    {
+      "id": "property",
+      "segmentId": "property",
+      "name": "Property Desk",
+      "summary": "Bring every building, tenant and rent record into one clear view.",
+      "accent": "blue",
+      "versionId": "property-v1",
+      "version": 1,
+      "basePrice": "28000",
+      "included": [
+        "Buildings & units",
+        "Tenant records",
+        "Rent ledger",
+        "Owner dashboard"
+      ],
+      "delivery": "2\u20133 weeks",
+      "features": [
+        {
+          "id": "property-branches-v1",
+          "code": "branches",
+          "name": "Additional locations",
+          "description": "Extend your workspace to another branch or location.",
+          "priceMode": "PerUnit",
+          "unitPrice": "3500",
+          "maxQuantity": 20,
+          "requires": []
+        },
+        {
+          "id": "property-collections-v1",
+          "code": "collections",
+          "name": "Collection integration",
+          "description": "Connect a supported payment collection provider.",
+          "priceMode": "Fixed",
+          "unitPrice": "8000",
+          "maxQuantity": 1,
+          "requires": []
+        },
+        {
+          "id": "property-complaints-v1",
+          "code": "complaints",
+          "name": "Service requests",
+          "description": "Track maintenance requests from opening to resolution.",
+          "priceMode": "Fixed",
+          "unitPrice": "5500",
+          "maxQuantity": 1,
+          "requires": []
+        },
+        {
+          "id": "property-reports-v1",
+          "code": "reports",
+          "name": "Portfolio analytics",
+          "description": "Compare occupancy, rent and performance.",
+          "priceMode": "Fixed",
+          "unitPrice": "6000",
+          "maxQuantity": 1,
+          "requires": []
+        }
+      ]
+    },
+    {
+      "id": "restaurants",
+      "segmentId": "restaurants",
+      "name": "Restaurant Suite",
+      "summary": "From the first order to the final bill. Keep your restaurant running in sync.",
+      "accent": "sage",
+      "versionId": "restaurants-v1",
+      "version": 1,
+      "basePrice": "24000",
+      "included": [
+        "Menu & table management",
+        "Order tracking",
+        "Billing & daily reports",
+        "Staff access"
+      ],
+      "delivery": "2\u20133 weeks",
+      "features": [
+        {
+          "id": "restaurants-branches-v1",
+          "code": "branches",
+          "name": "Additional locations",
+          "description": "Extend your workspace to another branch or location.",
+          "priceMode": "PerUnit",
+          "unitPrice": "3500",
+          "maxQuantity": 20,
+          "requires": []
+        },
+        {
+          "id": "restaurants-inventory-v1",
+          "code": "inventory",
+          "name": "Inventory control",
+          "description": "Track ingredients, stock and reorder levels.",
+          "priceMode": "Fixed",
+          "unitPrice": "6000",
+          "maxQuantity": 1,
+          "requires": []
+        },
+        {
+          "id": "restaurants-loyalty-v1",
+          "code": "loyalty",
+          "name": "Customer loyalty",
+          "description": "Reward regulars with points and tailored offers.",
+          "priceMode": "Fixed",
+          "unitPrice": "4500",
+          "maxQuantity": 1,
+          "requires": []
+        },
+        {
+          "id": "restaurants-online-v1",
+          "code": "online",
+          "name": "Online ordering",
+          "description": "Accept orders through your own branded storefront.",
+          "priceMode": "Fixed",
+          "unitPrice": "9000",
+          "maxQuantity": 1,
+          "requires": []
+        }
+      ]
+    },
+    {
+      "id": "salons",
+      "segmentId": "salons",
+      "name": "Salon Studio",
+      "summary": "A calmer calendar. Happier clients. A complete workspace for your salon.",
+      "accent": "rose",
+      "versionId": "salons-v1",
+      "version": 1,
+      "basePrice": "18000",
+      "included": [
+        "Appointment calendar",
+        "Services & pricing",
+        "Customer directory",
+        "Billing & receipts"
+      ],
+      "delivery": "2\u20133 weeks",
+      "features": [
+        {
+          "id": "salons-branches-v1",
+          "code": "branches",
+          "name": "Additional locations",
+          "description": "Extend your workspace to another branch or location.",
+          "priceMode": "PerUnit",
+          "unitPrice": "3500",
+          "maxQuantity": 20,
+          "requires": []
+        },
+        {
+          "id": "salons-commissions-v1",
+          "code": "commissions",
+          "name": "Staff commissions",
+          "description": "Keep team earnings and payouts organized.",
+          "priceMode": "Fixed",
+          "unitPrice": "4000",
+          "maxQuantity": 1,
+          "requires": []
+        },
+        {
+          "id": "salons-memberships-v1",
+          "code": "memberships",
+          "name": "Membership plans",
+          "description": "Create recurring packages and prepaid memberships.",
+          "priceMode": "Fixed",
+          "unitPrice": "5000",
+          "maxQuantity": 1,
+          "requires": []
+        },
+        {
+          "id": "salons-reminders-v1",
+          "code": "reminders",
+          "name": "Appointment reminders",
+          "description": "Send timely appointment notifications.",
+          "priceMode": "Fixed",
+          "unitPrice": "3000",
+          "maxQuantity": 1,
+          "requires": []
+        }
+      ]
+    }
+  ],
+  "evaluation": true,
+  "termsVersion": "knightcore-v1"
+}

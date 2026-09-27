@@ -1,0 +1,16 @@
+flowchart TD
+    B["Browse a segment"] --> P["Choose a software package"]
+    P --> C["Configure features and view estimate"]
+    C --> L{"Signed in?"}
+    L -- No --> S["Sign in and restore selection"]
+    L -- Yes --> R{"All items priced?"}
+    S --> R
+    R -- Yes --> Q["Review firm quote and billing details"]
+    R -- No --> X["Submit custom requirements"]
+    X --> A["Admin reviews scope and issues quote"]
+    A --> Q
+    Q --> D{"Accept quote?"}
+    D -- Yes --> O["Create order and invoice"]
+    D -- No --> E["Edit selection or decline"]
+    E --> C
+    O --> T["Track delivery and download invoice"]

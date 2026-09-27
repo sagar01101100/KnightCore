@@ -1,0 +1,11 @@
+flowchart TB
+  Browser["Laptop or mobile browser"] --> Web["Angular storefront and workspaces"]
+  Web --> API["ASP.NET Core API · cookie auth and CSRF"]
+  API --> Pricing["Pricing strategies and quote service"]
+  API --> Checkout["Transactional checkout and order lifecycle"]
+  Pricing --> DB[("SQL Server · catalog and commercial records")]
+  Checkout --> DB
+  DB --> Worker["Durable PDF and email job worker"]
+  Worker --> Storage["Private local or Azure invoice storage"]
+  Worker --> Mail["SMTP or local development mailbox"]
+  API --> Storage

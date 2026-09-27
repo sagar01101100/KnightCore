@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant C as Customer browser
+    participant A as Backend API
+    participant D as SQL Server
+    participant W as Worker
+    C->>A: Place order with quote version and request key
+    A->>D: Find completed idempotency result
+    alt Matching request already committed
+        D-->>A: Original order and invoice IDs
+        A-->>C: Original successful result
+    else New request
+        A->>D: Begin transaction and validate offer
+        A->>D: Accept quote and save order plus lines
+        A->>D: Allocate invoice number and save invoice
+        A->>D: Save PDF job and idempotency result
+        A->>D: Commit transaction
+        A-->>C: Order confirmed; invoice PDF pending
+        W->>D: Claim committed PDF job
+    end

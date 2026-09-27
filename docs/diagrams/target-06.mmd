@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant W as Worker
+    participant D as SQL Server
+    participant S as Private storage
+    participant E as Email provider
+    W->>D: Atomically claim due job with lease token
+    D-->>W: Invoice snapshot and document version
+    W->>S: Create immutable PDF at stable object key
+    S-->>W: Object reference and content hash
+    W->>D: Mark PDF ready and enqueue notification atomically
+    W->>D: Claim notification job
+    W->>E: Send invoice-ready message with deduplication key
+    E-->>W: Provider response
+    W->>D: Record delivery attempt and job outcome

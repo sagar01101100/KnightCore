@@ -1,0 +1,12 @@
+flowchart TD
+    B["Browser"] --> R["Domain, TLS and reverse proxy"]
+    R --> W["Angular web deployment"]
+    R --> A["API deployment"]
+    W --> A
+    A --> D[("Managed SQL database")]
+    J["Worker process"] --> D
+    J --> S["Private document storage"]
+    J --> E["Email provider"]
+    A --> S
+    A --> K["Protected configuration and keys"]
+    J --> K

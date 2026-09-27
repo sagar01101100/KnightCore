@@ -1,0 +1,9 @@
+erDiagram
+    direction TB
+    CUSTOMER ||--o{ QUOTE : owns
+    QUOTE ||--o{ QUOTE_VERSION : has
+    QUOTE ||--o| ORDER : becomes
+    QUOTE_VERSION ||--o{ QUOTE_LINE : contains
+    ORDER ||--|{ ORDER_LINE : contains
+    ORDER ||--|| INVOICE : billed_by
+    INVOICE ||--|{ INVOICE_LINE : contains

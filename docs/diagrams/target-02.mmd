@@ -1,0 +1,17 @@
+flowchart TD
+    U["Visitor, customer or admin"] --> E["HTTPS entry point and public cache"]
+    E --> W["Responsive Angular website"]
+    E --> A["ASP.NET Core API"]
+    W --> A
+    subgraph BACKEND["One backend application"]
+        A --> I["Identity and authorization"]
+        A --> C["Catalog, configuration and pricing"]
+        A --> O["Quotes, orders and billing"]
+    end
+    I --> D[("SQL Server")]
+    C --> D
+    O --> D
+    D --> J["Worker reads durable jobs"]
+    J --> D
+    J --> F["Private object storage"]
+    J --> N["Email provider"]

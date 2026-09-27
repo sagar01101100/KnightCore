@@ -1,0 +1,9 @@
+erDiagram
+    direction TB
+    SEGMENT ||--o{ SOFTWARE_PACKAGE : contains
+    SOFTWARE_PACKAGE ||--o{ PACKAGE_VERSION : versions
+    PACKAGE_VERSION ||--o{ PACKAGE_FEATURE : offers
+    FEATURE ||--o{ PACKAGE_FEATURE : described_by
+    PACKAGE_VERSION ||--o{ CONFIGURATION : selected_in
+    CONFIGURATION ||--o{ CONFIGURATION_ITEM : contains
+    PACKAGE_FEATURE ||--o{ CONFIGURATION_ITEM : selected_as
