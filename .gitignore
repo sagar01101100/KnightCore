@@ -1,0 +1,14 @@
+node_modules/
+.preview/
+dist/
+.angular/
+bin/
+obj/
+.env
+data/
+*.db
+*.db-shm
+*.db-wal
+TestResults/
+artifacts/
+.DS_Store
