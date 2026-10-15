@@ -61,6 +61,10 @@ PowerShell users can set `$env:Bootstrap__AdminEmail` and `$env:Bootstrap__Admin
 
 ## Local SQL Server stack
 
+For the configured AWS RDS instance and your existing SQL login, see
+[AWS RDS deployment](docs/AWS-RDS.md). Use `compose.rds.yaml` for that setup;
+the local stack below starts a separate SQL Server container.
+
 1. Install Docker Desktop with Linux containers (SQL Server requires a compatible x86-64 host).
 2. Copy `.env.example` to `.env`, enter distinct strong passwords and your admin email, and review SQL Server license terms before setting `SQL_ACCEPT_EULA=Y`.
 3. Run `docker compose up --build`.

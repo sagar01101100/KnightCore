@@ -5,6 +5,7 @@ dist/
 bin/
 obj/
 .env
+.env.rds
 data/
 *.db
 *.db-shm

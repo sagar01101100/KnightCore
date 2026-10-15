@@ -1,0 +1,30 @@
+# Run on your backend host. This uses AWS RDS, not a local SQL Server container.
+services:
+  initialize:
+    build: ./backend
+    command: ["--initialize"]
+    env_file: .env.rds
+    environment: &rds-environment
+      ASPNETCORE_ENVIRONMENT: Production
+      Database__Provider: SqlServer
+      Email__Provider: Smtp
+      DataDirectory: /app/data
+    volumes:
+      - rds-app-data:/app/data
+  api:
+    build: ./backend
+    env_file: .env.rds
+    environment: *rds-environment
+    volumes:
+      - rds-app-data:/app/data
+    depends_on:
+      initialize:
+        condition: service_completed_successfully
+  web:
+    build: ./frontend
+    ports:
+      - "127.0.0.1:8080:80"
+    depends_on:
+      - api
+volumes:
+  rds-app-data:

@@ -18,6 +18,10 @@ Directory.CreateDirectory(dataPath);
 var keyPath=Path.Combine(dataPath,"keys");Directory.CreateDirectory(keyPath);
 if(!OperatingSystem.IsWindows())File.SetUnixFileMode(keyPath,UnixFileMode.UserRead|UnixFileMode.UserWrite|UnixFileMode.UserExecute);
 var provider=builder.Configuration["Database:Provider"]??"SqlServer";
+if(provider is not ("SqlServer" or "Sqlite"))throw new InvalidOperationException("Database:Provider must be SqlServer or Sqlite.");
+var databaseConnection=provider=="SqlServer"
+    ?DatabaseConnection.ResolveSqlServer(builder.Configuration)
+    :builder.Configuration.GetConnectionString("Default");
 if(!builder.Environment.IsDevelopment()&&!builder.Environment.IsEnvironment("Testing"))
 {
     if(provider!="SqlServer")throw new InvalidOperationException("Production requires the configured SQL Server provider.");
@@ -26,8 +30,8 @@ if(!builder.Environment.IsDevelopment()&&!builder.Environment.IsEnvironment("Tes
 }
 builder.WebHost.ConfigureKestrel(o=>o.Limits.MaxRequestBodySize=128*1024);
 builder.Services.AddDbContext<AppDbContext>(o=>{
-    if(provider=="Sqlite")o.UseSqlite(builder.Configuration.GetConnectionString("Default"));
-    else o.UseSqlServer(builder.Configuration.GetConnectionString("Default"),sql=>sql.EnableRetryOnFailure());
+    if(provider=="Sqlite")o.UseSqlite(databaseConnection);
+    else o.UseSqlServer(databaseConnection,sql=>sql.EnableRetryOnFailure());
 });
 builder.Services.AddIdentity<AppUser,IdentityRole>(o=>{
     o.User.RequireUniqueEmail=true;
